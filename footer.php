@@ -34,71 +34,100 @@
 <footer class="dark-grey-bg">
     <div class="container">
         <div class="row">
+             <div class="col-lg-4 col-md-5 col-sm-6">
+                  <?php  $vision = new WP_Query( array( 'post_type' => 'post','posts_per_page' => 1 , 'p' => 98 ) );
 
-            <?php  $who_we_are = new WP_Query( array( 'post_type' => 'post','posts_per_page' => 1 , 'p' => 227 ) );
+while( $vision->have_posts()) :  $vision->the_post();?>
+               <a  href="<?=site_url();?>"> <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'full' ); ?>" alt="Forward Sports (PVT) Ltd."></a>
+     <?php endwhile; ?>
 
-while($who_we_are->have_posts()) : $who_we_are->the_post();?>
-            <div class="col-lg-4 col-md-5 col-sm-6">
-                <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'full' ); ?>
-" alt="Forward Sports (PVT) Ltd.">
-                  <?php echo get_the_content(); ?>
+                <ul class="contact">
+                    <?php  $posts = new WP_Query( array( 'post_type' => 'contact' , 'order' => 'ASC' ) );
+
+while($posts->have_posts()) : $posts->the_post();?>
+                   <?php 
+                   $d = get_the_excerpt();
+                
+                   if($d === 'phone') 
+                   {
+                    $phone = get_the_content();
+                    echo '<li><i class="fa fa-'. $d .'-square"></i>'. $phone .' </li>';
+
+                    }  elseif($d === 'envelope')
+                      {
+                        $envelope = get_the_content();
+                    echo '<li><i class="fa fa-'. $d .'-square"></i>'. $envelope .' </li>';
+
+                  }
+                  else
+                  {
+                    $home = get_the_content();
+                        echo '<li><i class="fa fa-'. $d .'"></i>'. $home .' </li>';
+                  }
+
+                     
+?>
+                      <?php endwhile; ?>
+                        </li>
+                </ul>
 
             </div>
- <?php endwhile; ?>
- <?php  $who_we_are = new WP_Query( array( 'post_type' => 'post','posts_per_page' => 1 , 'p' => 236) );
+            
 
-while($who_we_are->have_posts()) : $who_we_are->the_post();?>
-            <div class="col-lg-2 col-md-2 col-sm-6">
-                <h1><?php echo get_the_title(); ?></h1>
+  <div class="col-lg-2 col-md-2 col-sm-6">
+                               <h1>Connect US</h1>
+
                 <div class="line2"></div>
-               <?php echo get_the_content(); ?>
+                <ul class="connect">
+                     <?php  $posts = new WP_Query( array( 'post_type' => 'f1' , 'order' => 'ASC' ) );
+
+while($posts->have_posts()) : $posts->the_post();?>
+                    <li><a href="<?php echo get_the_content(); ?>" target="_blank" ><i class="fa fa-<?php echo get_the_excerpt(); ?>"></i> <?php echo get_the_title(); ?></a></li>
+                    <?php endwhile; ?>
+                </ul>
             </div>
-            <?php endwhile; ?>
+<?php  $posts = new WP_Query( array( 'post_type' => 'f2' , 'order' => 'ASC' ) );
 
-            <?php  $who_we_are = new WP_Query( array( 'post_type' => 'post','posts_per_page' => 1 , 'p' => 240) );
-
-while($who_we_are->have_posts()) : $who_we_are->the_post();?>
-            <div class="col-lg-2 col-md-2 col-sm-6">
-                <h1><?php echo get_the_title(); ?></h1>
+while($posts->have_posts()) : $posts->the_post();?>
+ <div class="col-lg-2 col-md-2 col-sm-6">
+                <h1> <?php echo get_the_title(); ?> </h1>
                 <div class="line2"></div>
-               <?php echo get_the_content(); ?>
+                <ul class="usefullinks">
+                                               
+                      <?php echo get_the_content(); ?>                      
+                </ul>
             </div>
-            <?php endwhile; ?>
-
-               <?php  $who_we_are = new WP_Query( array( 'post_type' => 'post','posts_per_page' => 1 , 'p' => 242) );
-
-while($who_we_are->have_posts()) : $who_we_are->the_post();?>
-            <div class="col-lg-2 col-md-2 col-sm-6">
-                <h1><?php echo get_the_title(); ?></h1>
-                <div class="line2"></div>
-               <?php echo get_the_content(); ?>
-            </div>
-            <?php endwhile; ?>
-
-              <?php  $who_we_are = new WP_Query( array( 'post_type' => 'post','posts_per_page' => 1 , 'p' => 244) );
-
-while($who_we_are->have_posts()) : $who_we_are->the_post();?>
-            <div class="col-lg-2 col-md-2 col-sm-6">
-                <h1><?php echo get_the_title(); ?></h1>
-                <div class="line2"></div>
-              <p style = "color:white;"> <?php echo get_the_content(); ?> </p>
-            </div>
-            <?php endwhile; ?>
+   <?php endwhile; ?>
+ 
 
         </div>
+    
         <div class="row copyright hidden-xs hidden-sm">
+           
             <div class="col-lg-6 col-md-6" style="text-align: left">
-                © 2020 Forward Sports (pvt) ltd. All rights reserved.            </div>
+               <?php dynamic_sidebar('image-1')?>
+            </div>
             <div class="col-lg-6 col-md-6" style="text-align: right">
-                <a href="https://techlinkers.com/" class="powerby"  style="text-decoration: none;color: #666666">Powered By <img src="images/tl-icon-small.png">   Techlinkers</a>
+                  <?php  $who_we_are = new WP_Query( array( 'post_type' => 'post','posts_per_page' => 1 , 'p' => 119) );
+
+while($who_we_are->have_posts()) : $who_we_are->the_post();?>
+                <a href="<?php echo get_the_content(); ?>" class="powerby"  style="text-decoration: none;color: #666666"> <?php echo get_the_title(); ?> <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'full' ); ?>
+"></a>
+                        <?php endwhile; ?>
+
             </div>
         </div>
         <div class="row copyright hidden-lg hidden-md">
             <div class="col-sm-12 col-xs-12">
-                © 2020 Forward Sports (pvt) ltd. All rights reserved.            </div>
+                              <?php dynamic_sidebar('image-1')?>
+           </div>
             <div class="col-sm-12 col-xs-12">
-                <a href="https://techlinkers.com/" class="powerby"  style="text-decoration: none;color: #666666">Powered By <img src="images/tl-icon-small.png">   Techlinkers</a>
-            </div>
+<?php  $who_we_are = new WP_Query( array( 'post_type' => 'post','posts_per_page' => 1 , 'p' => 119) );
+
+while($who_we_are->have_posts()) : $who_we_are->the_post();?>
+                <a href="<?php echo get_the_content(); ?>" class="powerby"  style="text-decoration: none;color: #666666"> <?php echo get_the_title(); ?> <img src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'full' ); ?>
+"></a>
+                        <?php endwhile; ?>            </div>
         </div>
     </div>
 </footer>

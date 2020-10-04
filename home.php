@@ -202,7 +202,7 @@ while($who_we_are->have_posts()) : $who_we_are->the_post();?>
                 </div>
                 <div class="description-about"><div class="description"><div style="text-align: justify; color: rgb(85, 85, 85); line-height: 26px; font-family: Lato, sans-serif; font-size: 15px;"><?php echo get_the_content();?>
 &nbsp;</div></div>                </div>
-                <div class="button"><a href="<?php echo esc_url( get_template_directory_uri() ); ?>/about-us/introduction" class="btn-orange">Learn More<i class="fa fa-chevron-right"></i></a></div>
+                <div class="button"><a href="<?=site_url();?>/about-us" class="btn-orange">Learn More<i class="fa fa-chevron-right"></i></a></div>
             <br>
             </div>
                <?php endwhile; ?>
@@ -276,7 +276,7 @@ while($our_commitment->have_posts()) : $our_commitment->the_post();?>
 
                 <div class="desciption">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <p><?php echo get_the_content();?>
 </p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 </div>
-                <div class="button"><a href="<?php echo esc_url( get_template_directory_uri() ); ?>/    about-us/hse-policies" class="btn-orange">Learn More <i class="fa fa-chevron-right"></i></a></div>
+                <div class="button"><a href="<?=site_url();?>/about-us" class="btn-orange">Learn More <i class="fa fa-chevron-right"></i></a></div>
             </div>
         </div>
           <?php endwhile; ?>
@@ -404,7 +404,7 @@ while($our_commitment->have_posts()) : $our_commitment->the_post();?>
                 <h1><?php echo get_the_title(); ?></h1>
                 <div class="line">&nbsp;</div>
                 <div class="text"><p><?php echo get_the_content(); ?><br></p></div>
-                <div class="button"><a href="about-us-gallery/leadership" class="btn-orange">Learn More <i class="fa fa-chevron-right"></i></a></div>
+                <div class="button"><a href="<?=site_url();?>/about-us" class="btn-orange">Learn More <i class="fa fa-chevron-right"></i></a></div>
             </div>
         </div>
                      <?php endwhile; ?>
@@ -484,7 +484,7 @@ FORWARD SPORTS WAS THE OFFICIAL MANUFACTURER OF THE 2014 FIFA WORLD CUP MATCH BA
                     </div>
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-bottom:40px;">
                         <div class="herotext-3">
-                            <div class="button"><a href="<?php echo esc_url( get_template_directory_uri() ); ?>/product-categories" class="btn-orange">All Products <i class="fa fa-chevron-right"></i></a></div>
+                            <div class="button"><a href="<?=site_url();?>/about-us" class="btn-orange">All Products <i class="fa fa-chevron-right"></i></a></div>
                         </div>
                     </div>
                 </div>
@@ -513,7 +513,7 @@ FORWARD SPORTS WAS THE OFFICIAL MANUFACTURER OF THE 2014 FIFA WORLD CUP MATCH BA
                         <div class="date"><?php echo the_excerpt(); ?></div>
                         <h1><?php echo get_the_title();?></h1>
                         <div class="description"><?php echo get_the_content();?></div>
-                        <div class="button"><a href="<?php echo esc_url( get_template_directory_uri() ); ?>/news-events-detail/Visit-of-students-from-University-of-Management-and-Technology(UMT)" class="btn-orange">Read More <i class="fa fa-chevron-right"></i></a></div>
+                        <div class="button"><a href="<?=site_url();?>/about-us" class="btn-orange">Read More <i class="fa fa-chevron-right"></i></a></div>
                     </div>
                 </div>
                       <?php endwhile; ?>   
@@ -521,7 +521,7 @@ FORWARD SPORTS WAS THE OFFICIAL MANUFACTURER OF THE 2014 FIFA WORLD CUP MATCH BA
         </div>
         <div class="col-lg-10 col-lg-offset-1">
             <div class="herotext-3">
-                <div class="button"><a href="<?php echo esc_url( get_template_directory_uri() ); ?>/news-events" class="btn-orange">Read All <i class="fa fa-chevron-right"></i></a></div>
+                <div class="button"><a href="<?=site_url();?>/about-us" class="btn-orange">Read All <i class="fa fa-chevron-right"></i></a></div>
             </div>
         </div>
     </div>

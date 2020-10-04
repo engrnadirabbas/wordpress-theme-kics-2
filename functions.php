@@ -79,16 +79,44 @@ jQuery(document).ready(function() {
 */
 function wpdocs_theme_slug_widgets_init() {
     register_sidebar( array(
-        'name'          => __( 'Main Sidebar', 'wordpress' ),
+        'name'          => __( 'footer 2', 'wordpress' ),
         'id'            => 'sidebar-1',
         'description'   => __( 'Widgets in this area will be shown on all posts and pages.', 'wordpress' ),
-        'before_widget' => '<li id="%1$s" class="widget %2$s">',
-        'after_widget'  => '</li>',
-        'before_title'  => '<h2 class="widgettitle">',
-        'after_title'   => '</h2>',
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '',
+        'after_title'   => '',
     ) );
 }
 add_action( 'widgets_init', 'wpdocs_theme_slug_widgets_init' );
+
+function wpdocs_theme_slug_widgets_init_1() {
+    register_sidebar( array(
+        'name'          => __( 'footer Copy rightL', 'wordpress' ),
+        'id'            => 'image-1',
+        'description'   => __( 'Widgets in this area will be shown on all posts and pages.', 'wordpress' ),
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '',
+        'after_title'   => '',
+    ) );
+}
+add_action( 'widgets_init', 'wpdocs_theme_slug_widgets_init_1' );
+
+function wpdocs_theme_slug_widgets_init_2() {
+    register_sidebar( array(
+        'name'          => __( 'footer Copy rightR', 'wordpress' ),
+        'id'            => 'image-2',
+        'description'   => __( 'Widgets in this area will be shown on all posts and pages.', 'wordpress' ),
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '',
+        'after_title'   => '',
+    ) );
+}
+add_action( 'widgets_init', 'wpdocs_theme_slug_widgets_init_2' );
+
+
 
 /*
 * Creating a function to create our slider
@@ -136,6 +164,179 @@ function slider_post_type() {
 	register_post_type( 'slider', $args );
 }
 add_action( 'init', 'slider_post_type', 0 );
+
+function contact_post_type() {
+	$labels = array(
+		'name'                => _x( 'contact', 'Post Type General Name', 'resturant' ),
+		'singular_name'       => _x( 'contact', 'Post Type Singular Name', 'resturant' ),
+		'menu_name'           => __( 'contact', 'resturant' ),
+		'parent_item_colon'   => __( 'Parent contact', 'resturant' ),
+		'all_items'           => __( 'All contact', 'resturant' ),
+		'view_item'           => __( 'View contact', 'resturant' ),
+		'add_new_item'        => __( 'Add New contact', 'resturant' ),
+		'add_new'             => __( 'Add New', 'resturant' ),
+		'edit_item'           => __( 'Edit contact', 'resturant' ),
+		'update_item'         => __( 'Update contact', 'resturant' ),
+		'search_items'        => __( 'Search contact', 'resturant' ),
+		'not_found'           => __( 'Not Found', 'resturant' ),
+		'not_found_in_trash'  => __( 'Not found in Trash', 'resturant' ),
+	);
+	$args = array(
+		'label'               => __( 'contact', 'resturant' ),
+		'description'         => __( 'contact news and reviews', 'resturant' ),
+		'labels'              => $labels,
+		'menu_icon'   => 'dashicons-slides
+',
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', ),
+		'taxonomies'          => array( 'genres' ),	
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+
+		'menu_position'       => 5,
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'page',
+		'taxonomies'          => array( 'category' ),
+	);
+	register_post_type( 'contact', $args );
+}
+add_action( 'init', 'contact_post_type', 0 );
+
+
+function f1_post_type() {
+	$labels = array(
+		'name'                => _x( 'f1', 'Post Type General Name', 'resturant' ),
+		'singular_name'       => _x( 'f1', 'Post Type Singular Name', 'resturant' ),
+		'menu_name'           => __( 'f1', 'resturant' ),
+		'parent_item_colon'   => __( 'Parent f1', 'resturant' ),
+		'all_items'           => __( 'All f1', 'resturant' ),
+		'view_item'           => __( 'View f1', 'resturant' ),
+		'add_new_item'        => __( 'Add New f1', 'resturant' ),
+		'add_new'             => __( 'Add New', 'resturant' ),
+		'edit_item'           => __( 'Edit f1', 'resturant' ),
+		'update_item'         => __( 'Update f1', 'resturant' ),
+		'search_items'        => __( 'Search f1', 'resturant' ),
+		'not_found'           => __( 'Not Found', 'resturant' ),
+		'not_found_in_trash'  => __( 'Not found in Trash', 'resturant' ),
+	);
+	$args = array(
+		'label'               => __( 'f1', 'resturant' ),
+		'description'         => __( 'f1 news and reviews', 'resturant' ),
+		'labels'              => $labels,
+		'menu_icon'   => 'dashicons-slides
+',
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', ),
+		'taxonomies'          => array( 'genres' ),	
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+
+		'menu_position'       => 5,
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'page',
+		'taxonomies'          => array( 'category' ),
+	);
+	register_post_type( 'f1', $args );
+}
+add_action( 'init', 'f1_post_type', 0 );
+
+function f2_post_type() {
+	$labels = array(
+		'name'                => _x( 'f2', 'Post Type General Name', 'resturant' ),
+		'singular_name'       => _x( 'f2', 'Post Type Singular Name', 'resturant' ),
+		'menu_name'           => __( 'f2', 'resturant' ),
+		'parent_item_colon'   => __( 'Parent f2', 'resturant' ),
+		'all_items'           => __( 'All f2', 'resturant' ),
+		'view_item'           => __( 'View f2', 'resturant' ),
+		'add_new_item'        => __( 'Add New f2', 'resturant' ),
+		'add_new'             => __( 'Add New', 'resturant' ),
+		'edit_item'           => __( 'Edit f2', 'resturant' ),
+		'update_item'         => __( 'Update f2', 'resturant' ),
+		'search_items'        => __( 'Search f2', 'resturant' ),
+		'not_found'           => __( 'Not Found', 'resturant' ),
+		'not_found_in_trash'  => __( 'Not found in Trash', 'resturant' ),
+	);
+	$args = array(
+		'label'               => __( 'f2', 'resturant' ),
+		'description'         => __( 'f2 news and reviews', 'resturant' ),
+		'labels'              => $labels,
+		'menu_icon'   => 'dashicons-slides
+',
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', ),
+		'taxonomies'          => array( 'genres' ),	
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+
+		'menu_position'       => 5,
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'page',
+		'taxonomies'          => array( 'category' ),
+	);
+	register_post_type( 'f2', $args );
+}
+add_action( 'init', 'f2_post_type', 0 );
+
+function languages_post_type() {
+	$labels = array(
+		'name'                => _x( 'languages', 'Post Type General Name', 'resturant' ),
+		'singular_name'       => _x( 'languages', 'Post Type Singular Name', 'resturant' ),
+		'menu_name'           => __( 'languages', 'resturant' ),
+		'parent_item_colon'   => __( 'Parent languages', 'resturant' ),
+		'all_items'           => __( 'All languages', 'resturant' ),
+		'view_item'           => __( 'View languages', 'resturant' ),
+		'add_new_item'        => __( 'Add New languages', 'resturant' ),
+		'add_new'             => __( 'Add New', 'resturant' ),
+		'edit_item'           => __( 'Edit languages', 'resturant' ),
+		'update_item'         => __( 'Update languages', 'resturant' ),
+		'search_items'        => __( 'Search languages', 'resturant' ),
+		'not_found'           => __( 'Not Found', 'resturant' ),
+		'not_found_in_trash'  => __( 'Not found in Trash', 'resturant' ),
+	);
+	$args = array(
+		'label'               => __( 'languages', 'resturant' ),
+		'description'         => __( 'languages news and reviews', 'resturant' ),
+		'labels'              => $labels,
+		'menu_icon'   => 'dashicons-slides
+',
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', ),
+		'taxonomies'          => array( 'genres' ),	
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+
+		'menu_position'       => 5,
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'page',
+		'taxonomies'          => array( 'category' ),
+	);
+	register_post_type( 'languages', $args );
+}
+add_action( 'init', 'languages_post_type', 0 );
 
 
 

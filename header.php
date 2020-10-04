@@ -64,7 +64,11 @@
 <div class="row">
 <div class="col-lg-2 col-md-2 col-sm-2">
     <!--  Logo Starts -->
-    <a class="navbar-brand external" href="<?php echo esc_url( get_template_directory_uri() ); ?>/index/"><img class="logo" src="<?php echo esc_url( get_template_directory_uri() ); ?>/data/uploads/forward.png" alt="Forward Sports (PVT) Ltd."></a>
+      <?php  $vision = new WP_Query( array( 'post_type' => 'post','posts_per_page' => 1 , 'p' => 98 ) );
+
+while( $vision->have_posts()) :  $vision->the_post();?>
+    <a class="navbar-brand external" href="<?=site_url();?>"><img class="logo" src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'full' ); ?>" alt="Forward Sports (PVT) Ltd."></a>
+     <?php endwhile; ?>
     <!-- Logo Ends -->
 </div>
 <div class="col-lg-10 col-md-12">
@@ -73,7 +77,12 @@
 <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
     <!--  Logo Starts -->
-    <a class="navbar-brand external visible-xs" href="<?php echo esc_url( get_template_directory_uri() ); ?>/index/"><img class="logo" src="<?php echo esc_url( get_template_directory_uri() ); ?>/data/uploads/forward.png" alt="Forward Sports (PVT) Ltd."></a>
+    <?php  $vision = new WP_Query( array( 'post_type' => 'post','posts_per_page' => 1 , 'p' => 98 ) );
+
+while( $vision->have_posts()) :  $vision->the_post();?>
+    <a class="navbar-brand external visible-xs" href="<?=site_url();?>"><img class="logo" src="<?php echo wp_get_attachment_url( get_post_thumbnail_id($post->ID), 'full' ); ?>" alt="Forward Sports (PVT) Ltd."></a>
+        <?php endwhile; ?>
+
     <!-- Logo Ends -->
 </div>
 
@@ -90,6 +99,71 @@
                                             'walker'            => new WP_Bootstrap_Navwalker())
                                         );
                                         ?>
+<ul class="nav navbar-nav">
+<li class="dropdown" style="margin-left: 100px;">
+    <a class="dropdown-toggle js-activated" id="dropdown-hover" data-toggle="dropdown"><img src="images/globe-icon.png"> <i class="fa fa-caret-down"></i> </a>
+    <ul class="dropdown-menu dropdown-menu-right" role="menu">
+        <a href="#" onclick="doGTranslate('en|en');return false;" title="English" style="background-position:-0px -0px;"><img src="images/eng-icon.png" height="" width="" alt="English" /></a>
+        <?php  $posts = new WP_Query( array( 'post_type' => 'languages' , 'order' => 'ASC' ) );
+
+while($posts->have_posts()) : $posts->the_post();?>
+        <li><a href="#" onclick="doGTranslate('en|<?php echo get_the_content(); ?>');return false;" title="<?php echo the_title(); ?>" style="background-position:-0px -0px;"><?php echo the_title(); ?></a></li>
+                      <?php endwhile; ?>
+
+       <!--  <li><a href="#" onclick="doGTranslate('en|hy');return false;" title="Armenian" style="background-position:-0px -0px;">Armenian</a></li>
+        <li><a href="#" onclick="doGTranslate('en|bg');return false;" title="Bulgarian" style="background-position:-0px -0px;">Bulgarian</a></li>
+        <li><a href="#" onclick="doGTranslate('en|zh-CN');return false;" title="Chinese (Simplified)" style="background-position:-0px -0px;">Chinese</a></li>
+        <li><a href="#" onclick="doGTranslate('en|cs');return false;" title="Czech" style="background-position:-0px -0px;">Czech</a></li>
+        <li><a href="#" onclick="doGTranslate('en|da');return false;" title="Danish" style="background-position:-0px -0px;">Danish</a></li>
+        <li><a href="#" onclick="doGTranslate('en|nl');return false;" title="Dutch" style="background-position:-0px -0px;">Dutch</a></li>
+        <li><a href="#" onclick="doGTranslate('en|tl');return false;" title="Filipino" style="background-position:-0px -0px;">Filipino</a></li>
+        <li><a href="#" onclick="doGTranslate('en|fi');return false;" title="Finnish" style="background-position:-0px -0px;">Finnish</a></li>
+        <li><a href="#" onclick="doGTranslate('en|fr');return false;" title="French" style="background-position:-0px -0px;">French</a></li>
+        <li><a href="#" onclick="doGTranslate('en|de');return false;" title="German" style="background-position:-0px -0px;">German</a></li>
+        <li><a href="#" onclick="doGTranslate('en|el');return false;" title="Greek" style="background-position:-0px -0px;">Greek</a></li>
+        <li><a href="#" onclick="doGTranslate('en|iw');return false;" title="Hebrew" style="background-position:-0px -0px;">Hebrew</a></li>
+        <li><a href="#" onclick="doGTranslate('en|hi');return false;" title="Hindi" style="background-position:-0px -0px;">Hindi</a></li>
+        <li><a href="#" onclick="doGTranslate('en|hu');return false;" title="Hungarian" style="background-position:-0px -0px;">Hungarian</a></li>
+        <li><a href="#" onclick="doGTranslate('en|id');return false;" title="Indonesian" style="background-position:-0px -0px;">Indonesian</a></li>
+        <li><a href="#" onclick="doGTranslate('en|ga');return false;" title="Irish" style="background-position:-0px -0px;">Irish</a></li>
+        <li><a href="#" onclick="doGTranslate('en|it');return false;" title="Italian" style="background-position:-0px -0px;">Italian</a></li>
+        <li><a href="#" onclick="doGTranslate('en|ja');return false;" title="Japanese" style="background-position:-0px -0px;">Japanese</a></li>
+        <li><a href="#" onclick="doGTranslate('en|ko');return false;" title="Korean" style="background-position:-0px -0px;">Korean</a></li>
+        <li><a href="#" onclick="doGTranslate('en|ms');return false;" title="Malay" style="background-position:-0px -0px;">Malay</a></li>
+        <li><a href="#" onclick="doGTranslate('en|no');return false;" title="Norwegian" style="background-position:-0px -0px;">Norwegian</a></li>
+        <li><a href="#" onclick="doGTranslate('en|fi');return false;" title="Persian" style="background-position:-0px -0px;">Persian</a></li>
+        <li><a href="#" onclick="doGTranslate('en|pl');return false;" title="Polish" style="background-position:-0px -0px;">Polish</a></li>
+        <li><a href="#" onclick="doGTranslate('en|pt');return false;" title="Portuguese" style="background-position:-0px -0px;">Portuguese</a></li>
+        <li><a href="#" onclick="doGTranslate('en|ro');return false;" title="Romanian" style="background-position:-0px -0px;">Romanian</a></li>
+        <li><a href="#" onclick="doGTranslate('en|ru');return false;" title="Russian" style="background-position:-0px -0px;">Russian</a></li>
+        <li><a href="#" onclick="doGTranslate('en|sk');return false;" title="Slovak" style="background-position:-0px -0px;">Slovak</a></li>
+        <li><a href="#" onclick="doGTranslate('en|es');return false;" title="Spanish" style="background-position:-0px -0px;">Spanish</a></li>
+        <li><a href="#" onclick="doGTranslate('en|sw');return false;" title="Swahili" style="background-position:-0px -0px;">Swahili</a></li>
+        <li><a href="#" onclick="doGTranslate('en|sv');return false;" title="Swedish" style="background-position:-0px -0px;">Swedish</a></li>
+        <li><a href="#" onclick="doGTranslate('en|th');return false;" title="Thai" style="background-position:-0px -0px;">Thai</a></li>
+        <li><a href="#" onclick="doGTranslate('en|tr');return false;" title="Turkish" style="background-position:-0px -0px;">Turkish</a></li>
+        <li><a href="#" onclick="doGTranslate('en|ur');return false;" title="Urdu" style="background-position:-0px -0px;">Urdu</a></li>
+        <li><a href="#" onclick="doGTranslate('en|vi');return false;" title="Vietnamese" style="background-position:-0px -0px;">Vietnamese</a></li>
+        <li><a href="#" onclick="doGTranslate('en|cy');return false;" title="Welsh" style="background-position:-0px -0px;">Welsh</a></li>
+        <li><a href="#" onclick="doGTranslate('en|yi');return false;" title="Yiddish" style="background-position:-0px -0px;">Yiddish</a></li>
+        <li><a href="#" onclick="doGTranslate('en|bn');return false;" title="Bengali" style="background-position:-0px -0px;">Bengali</a></li>
+        <li><a href="#" onclick="doGTranslate('en|la');return false;" title="Bengali" style="background-position:-0px -0px;">Latin</a></li> -->
+    </ul>
+    <select hidden="" onchange="doGTranslate(this);"><option value="">Select Language</option><option value="en|ar">Arabic</option><option value="en|hy">Armenian</option><option value="en|bg">Bulgarian</option><option value="en|zh-CN">Chinese (Simplified)</option><option value="en|zh-TW">Chinese (Traditional)</option><option value="en|cs">Czech</option><option value="en|da">Danish</option><option value="en|nl">Dutch</option><option value="en|en">English</option><option value="en|tl">Filipino</option><option value="en|fi">Finnish</option><option value="en|fr">French</option><option value="en|de">German</option><option value="en|el">Greek</option><option value="en|iw">Hebrew</option><option value="en|hi">Hindi</option><option value="en|hu">Hungarian</option><option value="en|id">Indonesian</option><option value="en|ga">Irish</option><option value="en|it">Italian</option><option value="en|ja">Japanese</option><option value="en|ko">Korean</option><option value="en|ms">Malay</option><option value="en|no">Norwegian</option><option value="en|fa">Persian</option><option value="en|pl">Polish</option><option value="en|pt">Portuguese</option><option value="en|ro">Romanian</option><option value="en|ru">Russian</option><option value="en|sk">Slovak</option><option value="en|es">Spanish</option><option value="en|sw">Swahili</option><option value="en|sv">Swedish</option><option value="en|th">Thai</option><option value="en|tr">Turkish</option><option value="en|uk">Ukrainian</option><option value="en|ur">Urdu</option><option value="en|vi">Vietnamese</option><option value="en|cy">Welsh</option><option value="en|yi">Yiddish</option><option value="en|bn">Bengali</option><option value="en|la">Latin</option></select><div id="google_translate_element2"></div>
+
+    <script type="text/javascript">
+        function googleTranslateElementInit2() {new google.translate.TranslateElement({pageLanguage: 'en',autoDisplay: false}, 'google_translate_element2');}
+    </script><script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit2"></script>
+
+
+    <script type="text/javascript">
+        /* <![CDATA[ */
+        eval(function(p,a,c,k,e,r){e=function(c){return(c<a?'':e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)r[e(c)]=k[c]||e(c);k=[function(e){return r[e]}];e=function(){return'\\w+'};c=1};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p}('6 7(a,b){n{4(2.9){3 c=2.9("o");c.p(b,f,f);a.q(c)}g{3 c=2.r();a.s(\'t\'+b,c)}}u(e){}}6 h(a){4(a.8)a=a.8;4(a==\'\')v;3 b=a.w(\'|\')[1];3 c;3 d=2.x(\'y\');z(3 i=0;i<d.5;i++)4(d[i].A==\'B-C-D\')c=d[i];4(2.j(\'k\')==E||2.j(\'k\').l.5==0||c.5==0||c.l.5==0){F(6(){h(a)},G)}g{c.8=b;7(c,\'m\');7(c,\'m\')}}',43,43,'||document|var|if|length|function|GTranslateFireEvent|value|createEvent||||||true|else|doGTranslate||getElementById|google_translate_element2|innerHTML|change|try|HTMLEvents|initEvent|dispatchEvent|createEventObject|fireEvent|on|catch|return|split|getElementsByTagName|select|for|className|goog|te|combo|null|setTimeout|500'.split('|'),0,{}))
+        /* ]]> */
+    </script>
+
+</li>
+</ul>
 <!-- <ul class="nav navbar-nav">
 <li class="dropdown">
     <a class="dropdown-toggle js-activated hvr-bounce-to-bottom" id="dropdown-hover-g" data-toggle="dropdown">ABOUT <i class="fa fa-caret-down"></i> </a>
