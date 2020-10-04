@@ -13,8 +13,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <base href="https://sports.forward.pk/" >
-     <!--  <base href="<?php echo esc_url( get_template_directory_uri() ); ?>" > -->
-     <!--    Starts Title and Favicon-->
+     
+<!--    <base href="<?php echo esc_url( get_template_directory_uri() ); ?>" 
+ -->     <!--    Starts Title and Favicon-->
     <link rel="shortcut icon" type="image/x-icon" href="<?php echo esc_url( get_template_directory_uri() ); ?>/images/favicon.png" />
     <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
     
@@ -101,9 +102,9 @@ while( $vision->have_posts()) :  $vision->the_post();?>
                                         ?>
 <ul class="nav navbar-nav">
 <li class="dropdown" style="margin-left: 100px;">
-    <a class="dropdown-toggle js-activated" id="dropdown-hover" data-toggle="dropdown"><img src="images/globe-icon.png"> <i class="fa fa-caret-down"></i> </a>
+    <a class="dropdown-toggle js-activated" id="dropdown-hover" data-toggle="dropdown"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/globe-icon.png"> <i class="fa fa-caret-down"></i> </a>
     <ul class="dropdown-menu dropdown-menu-right" role="menu">
-        <a href="#" onclick="doGTranslate('en|en');return false;" title="English" style="background-position:-0px -0px;"><img src="images/eng-icon.png" height="" width="" alt="English" /></a>
+        <a href="#" onclick="doGTranslate('en|en');return false;" title="English" style="background-position:-0px -0px;"><img src="<?php echo esc_url( get_template_directory_uri() ); ?>/images/eng-icon.png" height="" width="" alt="English" /></a>
         <?php  $posts = new WP_Query( array( 'post_type' => 'languages' , 'order' => 'ASC' ) );
 
 while($posts->have_posts()) : $posts->the_post();?>
