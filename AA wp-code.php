@@ -48,7 +48,7 @@ add_action( 'init', 'slider_post_type', 0 );
 /*
 * FILE LINK CODE
 */
-
+<?php echo esc_url( get_template_directory_uri() ); ?>
 
 <!-- DYNAMIC IMAGE LINK -->
 

@@ -116,6 +116,32 @@ function wpdocs_theme_slug_widgets_init_2() {
 }
 add_action( 'widgets_init', 'wpdocs_theme_slug_widgets_init_2' );
 
+function wpdocs_theme_slug_widgets_init_3() {
+    register_sidebar( array(
+        'name'          => __( 'blog-title', 'wordpress' ),
+        'id'            => 'blog-title',
+        'description'   => __( 'Widgets in this area will be shown on all posts and pages.', 'wordpress' ),
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '',
+        'after_title'   => '',
+    ) );
+}
+add_action( 'widgets_init', 'wpdocs_theme_slug_widgets_init_3' );
+
+function wpdocs_theme_slug_widgets_init_4() {
+    register_sidebar( array(
+        'name'          => __( 'blog-content', 'wordpress' ),
+        'id'            => 'blog-content',
+        'description'   => __( 'Widgets in this area will be shown on all posts and pages.', 'wordpress' ),
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '',
+        'after_title'   => '',
+    ) );
+}
+add_action( 'widgets_init', 'wpdocs_theme_slug_widgets_init_4' );
+
 
 
 /*
@@ -208,6 +234,220 @@ function contact_post_type() {
 }
 add_action( 'init', 'contact_post_type', 0 );
 
+function Sustain_B1_post_type() {
+	$labels = array(
+		'name'                => _x( 'Sustain_B1', 'Post Type General Name', 'resturant' ),
+		'singular_name'       => _x( 'Sustain_B1', 'Post Type Singular Name', 'resturant' ),
+		'menu_name'           => __( 'Sustain_B1', 'resturant' ),
+		'parent_item_colon'   => __( 'Parent Sustain_B1', 'resturant' ),
+		'all_items'           => __( 'All Sustain_B1', 'resturant' ),
+		'view_item'           => __( 'View Sustain_B1', 'resturant' ),
+		'add_new_item'        => __( 'Add New Sustain_B1', 'resturant' ),
+		'add_new'             => __( 'Add New', 'resturant' ),
+		'edit_item'           => __( 'Edit Sustain_B1', 'resturant' ),
+		'update_item'         => __( 'Update Sustain_B1', 'resturant' ),
+		'search_items'        => __( 'Search Sustain_B1', 'resturant' ),
+		'not_found'           => __( 'Not Found', 'resturant' ),
+		'not_found_in_trash'  => __( 'Not found in Trash', 'resturant' ),
+	);
+	$args = array(
+		'label'               => __( 'Sustain_B1', 'resturant' ),
+		'description'         => __( 'Sustain_B1 news and reviews', 'resturant' ),
+		'labels'              => $labels,
+		'menu_icon'   => 'dashicons-slides
+',
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', ),
+		'taxonomies'          => array( 'genres' ),	
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+
+		'menu_position'       => 5,
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'page',
+		'taxonomies'          => array( 'category' ),
+	);
+	register_post_type( 'Sustain_B1', $args );
+}
+add_action( 'init', 'Sustain_B1_post_type', 0 );
+
+
+function Sustain_B2_post_type() {
+	$labels = array(
+		'name'                => _x( 'Sustain_B2', 'Post Type General Name', 'resturant' ),
+		'singular_name'       => _x( 'Sustain_B2', 'Post Type Singular Name', 'resturant' ),
+		'menu_name'           => __( 'Sustain_B2', 'resturant' ),
+		'parent_item_colon'   => __( 'Parent Sustain_B2', 'resturant' ),
+		'all_items'           => __( 'All Sustain_B2', 'resturant' ),
+		'view_item'           => __( 'View Sustain_B2', 'resturant' ),
+		'add_new_item'        => __( 'Add New Sustain_B2', 'resturant' ),
+		'add_new'             => __( 'Add New', 'resturant' ),
+		'edit_item'           => __( 'Edit Sustain_B2', 'resturant' ),
+		'update_item'         => __( 'Update Sustain_B2', 'resturant' ),
+		'search_items'        => __( 'Search Sustain_B2', 'resturant' ),
+		'not_found'           => __( 'Not Found', 'resturant' ),
+		'not_found_in_trash'  => __( 'Not found in Trash', 'resturant' ),
+	);
+	$args = array(
+		'label'               => __( 'Sustain_B2', 'resturant' ),
+		'description'         => __( 'Sustain_B2 news and reviews', 'resturant' ),
+		'labels'              => $labels,
+		'menu_icon'   => 'dashicons-slides
+',
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', ),
+		'taxonomies'          => array( 'genres' ),	
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+
+		'menu_position'       => 5,
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'page',
+		'taxonomies'          => array( 'category' ),
+	);
+	register_post_type( 'Sustain_B2', $args );
+}
+add_action( 'init', 'Sustain_B2_post_type', 0 );
+function System_post_type() {
+	$labels = array(
+		'name'                => _x( 'System', 'Post Type General Name', 'resturant' ),
+		'singular_name'       => _x( 'System', 'Post Type Singular Name', 'resturant' ),
+		'menu_name'           => __( 'System', 'resturant' ),
+		'parent_item_colon'   => __( 'Parent System', 'resturant' ),
+		'all_items'           => __( 'All System', 'resturant' ),
+		'view_item'           => __( 'View System', 'resturant' ),
+		'add_new_item'        => __( 'Add New System', 'resturant' ),
+		'add_new'             => __( 'Add New', 'resturant' ),
+		'edit_item'           => __( 'Edit System', 'resturant' ),
+		'update_item'         => __( 'Update System', 'resturant' ),
+		'search_items'        => __( 'Search System', 'resturant' ),
+		'not_found'           => __( 'Not Found', 'resturant' ),
+		'not_found_in_trash'  => __( 'Not found in Trash', 'resturant' ),
+	);
+	$args = array(
+		'label'               => __( 'System', 'resturant' ),
+		'description'         => __( 'System news and reviews', 'resturant' ),
+		'labels'              => $labels,
+		'menu_icon'   => 'dashicons-slides
+',
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', ),
+		'taxonomies'          => array( 'genres' ),	
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+
+		'menu_position'       => 5,
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'page',
+		'taxonomies'          => array( 'category' ),
+	);
+	register_post_type( 'System', $args );
+}
+add_action( 'init', 'System_post_type', 0 );
+
+
+function Golden_B1_post_type() {
+	$labels = array(
+		'name'                => _x( 'Golden_B1', 'Post Type General Name', 'resturant' ),
+		'singular_name'       => _x( 'Golden_B1', 'Post Type Singular Name', 'resturant' ),
+		'menu_name'           => __( 'Golden_B1', 'resturant' ),
+		'parent_item_colon'   => __( 'Parent Golden_B1', 'resturant' ),
+		'all_items'           => __( 'All Golden_B1', 'resturant' ),
+		'view_item'           => __( 'View Golden_B1', 'resturant' ),
+		'add_new_item'        => __( 'Add New Golden_B1', 'resturant' ),
+		'add_new'             => __( 'Add New', 'resturant' ),
+		'edit_item'           => __( 'Edit Golden_B1', 'resturant' ),
+		'update_item'         => __( 'Update Golden_B1', 'resturant' ),
+		'search_items'        => __( 'Search Golden_B1', 'resturant' ),
+		'not_found'           => __( 'Not Found', 'resturant' ),
+		'not_found_in_trash'  => __( 'Not found in Trash', 'resturant' ),
+	);
+	$args = array(
+		'label'               => __( 'Golden_B1', 'resturant' ),
+		'description'         => __( 'Golden_B1 news and reviews', 'resturant' ),
+		'labels'              => $labels,
+		'menu_icon'   => 'dashicons-slides
+',
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', ),
+		'taxonomies'          => array( 'genres' ),	
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+
+		'menu_position'       => 5,
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'page',
+		'taxonomies'          => array( 'category' ),
+	);
+	register_post_type( 'Golden_B1', $args );
+}
+add_action( 'init', 'Golden_B1_post_type', 0 );
+function Golden_B2_post_type() {
+	$labels = array(
+		'name'                => _x( 'Golden_B2', 'Post Type General Name', 'resturant' ),
+		'singular_name'       => _x( 'Golden_B2', 'Post Type Singular Name', 'resturant' ),
+		'menu_name'           => __( 'Golden_B2', 'resturant' ),
+		'parent_item_colon'   => __( 'Parent Golden_B2', 'resturant' ),
+		'all_items'           => __( 'All Golden_B2', 'resturant' ),
+		'view_item'           => __( 'View Golden_B2', 'resturant' ),
+		'add_new_item'        => __( 'Add New Golden_B2', 'resturant' ),
+		'add_new'             => __( 'Add New', 'resturant' ),
+		'edit_item'           => __( 'Edit Golden_B2', 'resturant' ),
+		'update_item'         => __( 'Update Golden_B2', 'resturant' ),
+		'search_items'        => __( 'Search Golden_B2', 'resturant' ),
+		'not_found'           => __( 'Not Found', 'resturant' ),
+		'not_found_in_trash'  => __( 'Not found in Trash', 'resturant' ),
+	);
+	$args = array(
+		'label'               => __( 'Golden_B2', 'resturant' ),
+		'description'         => __( 'Golden_B2 news and reviews', 'resturant' ),
+		'labels'              => $labels,
+		'menu_icon'   => 'dashicons-slides
+',
+		'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', ),
+		'taxonomies'          => array( 'genres' ),	
+		'hierarchical'        => false,
+		'public'              => true,
+		'show_ui'             => true,
+		'show_in_menu'        => true,
+		'show_in_nav_menus'   => true,
+		'show_in_admin_bar'   => true,
+
+		'menu_position'       => 5,
+		'can_export'          => true,
+		'has_archive'         => true,
+		'exclude_from_search' => false,
+		'publicly_queryable'  => true,
+		'capability_type'     => 'page',
+		'taxonomies'          => array( 'category' ),
+	);
+	register_post_type( 'Golden_B2', $args );
+}
+add_action( 'init', 'Golden_B2_post_type', 0 );
 
 function f1_post_type() {
 	$labels = array(

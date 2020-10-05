@@ -159,7 +159,7 @@ while( $vision->have_posts()) :  $vision->the_post();?>
                     <div class="info-overlay">
                         <div class="icon col"><a class="popup-youtube" href="https://www.youtube.com/watch?v=ptrjry2A1WI"><i class="fa fa-play-circle fa-5x"></i></a></div>
                         <div class="heading"><?php echo get_the_title();?></div>
-                    <div class="description"><?php echo get_the_content();?></div>
+                    <div class="description"><?php echo get_the_excerpt();?></div>
                     </div></center>
                 </div>
             </div>
@@ -276,7 +276,7 @@ while($our_commitment->have_posts()) : $our_commitment->the_post();?>
 
                 <div class="desciption">                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                <p><?php echo get_the_content();?>
 </p>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 </div>
-                <div class="button"><a href="<?=site_url();?>/about-us" class="btn-orange">Learn More <i class="fa fa-chevron-right"></i></a></div>
+                <div class="button"><a href="<?=site_url();?>/golden-9/" class="btn-orange">Learn More <i class="fa fa-chevron-right"></i></a></div>
             </div>
         </div>
           <?php endwhile; ?>
@@ -404,7 +404,7 @@ while($our_commitment->have_posts()) : $our_commitment->the_post();?>
                 <h1><?php echo get_the_title(); ?></h1>
                 <div class="line">&nbsp;</div>
                 <div class="text"><p><?php echo get_the_content(); ?><br></p></div>
-                <div class="button"><a href="<?=site_url();?>/about-us" class="btn-orange">Learn More <i class="fa fa-chevron-right"></i></a></div>
+                <div class="button"><a href="<?=site_url();?>/leader" class="btn-orange">Learn More <i class="fa fa-chevron-right"></i></a></div>
             </div>
         </div>
                      <?php endwhile; ?>
@@ -499,9 +499,9 @@ FORWARD SPORTS WAS THE OFFICIAL MANUFACTURER OF THE 2014 FIFA WORLD CUP MATCH BA
                 <div class="herotext-3">
                     <div class="boxed-heading">
                         <h2>What's Happening</h2>
-                        <h1>News & Events</h1>
+                        <h1><?php dynamic_sidebar('blog-title')?></h1>
                     </div>
-                    <div class="description"><p style="text-align: center; ">Highlights of activities, events and news about Forward Sports</p></div>
+                    <div class="description"><p style="text-align: center; "><?php dynamic_sidebar('blog-content')?></p></div>
                 </div>
             </div>
         </div>

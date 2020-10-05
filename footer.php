@@ -30,8 +30,8 @@
 </div>
 <!-- /. subscribe us
     ========================================================================= -->
-
-<footer class="dark-grey-bg">
+<!-- style = "background-color:#4E545B"
+ --><footer class="dark-grey-bg" >
     <div class="container">
         <div class="row">
              <div class="col-lg-4 col-md-5 col-sm-6">

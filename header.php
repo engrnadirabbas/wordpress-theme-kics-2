@@ -4,7 +4,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<title>Forward Sports - Home</title>
+<title>InterMarket - Buy it, Wear it, Love it</title>
 
 
 <head>
@@ -16,7 +16,7 @@
      
 <!--    <base href="<?php echo esc_url( get_template_directory_uri() ); ?>" 
  -->     <!--    Starts Title and Favicon-->
-    <link rel="shortcut icon" type="image/x-icon" href="<?php echo esc_url( get_template_directory_uri() ); ?>/images/favicon.png" />
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo esc_url( get_template_directory_uri() ); ?>/images/LOGOO.png" />
     <!--[if IE]><meta http-equiv="x-ua-compatible" content="IE=9" /><![endif]-->
     
   
